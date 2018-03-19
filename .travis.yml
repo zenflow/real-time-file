@@ -1,0 +1,12 @@
+language: node_js
+node_js: node
+stages:
+  - name: test
+  - name: release
+    if: branch = master and type = push
+jobs:
+  include:
+    - stage: test
+      script: npm test
+    - stage: release
+      script: semantic-release
