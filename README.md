@@ -8,3 +8,25 @@ live readable+writable representation of a file
 [![Greenkeeper badge](https://badges.greenkeeper.io/zenflow/real-time-file.svg)](https://greenkeeper.io/)
 [![semantic-release badge](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/zenflow/real-time-file/blob/master/CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Example
+
+```js
+const RealTimeFile = require('real-time-file')
+
+const file = new RealTimeFile('.gitignore')
+file.on('text', text => {})
+file.on('lines', lines => {})
+file.ready
+  .then(() => {
+    file.lines.unshift('package-lock.json')
+    // or
+    file.lines = ['package-lock.json', ...lines]
+    // or
+    file.text = `package-lock.json\n${file.text}`
+  })
+  .catch(console.error)
+```
+
+- saves new contents to file system immediately
+- watches the file and reloads when changed by another process
