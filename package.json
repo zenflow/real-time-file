@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/zenflow/real-time-file#readme",
   "dependencies": {
-    "debounce": "^1.1.0",
+    "debounce": "1.1.0",
     "p-event": "^1.3.0"
   },
   "devDependencies": {
