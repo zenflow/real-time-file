@@ -36,7 +36,7 @@
     "@semantic-release/git": "^4.0.1",
     "jest": "^22.4.2",
     "semantic-release": "^15.1.2",
-    "tempy": "^0.2.1",
+    "tempy": "^0.3.0",
     "zenflow-lint-js": "^2.0.0"
   }
 }
